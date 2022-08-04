@@ -1,9 +1,10 @@
+from email.contentmanager import raw_data_manager
 import random
 import sys 
 
-meet_num = 1
 
-things_do = ["Help pick up cigarettes off the streets", "reuse, reduce, recycle","Do nothing", "protest", "advertise greener ways", "make poster"]
+
+things_do = ["help pick up cigarettes off the streets", "reuse, reduce, recycle","do nothing", "protest", "advertise greener ways", "make poster"]
 
 
 class Player:
@@ -13,6 +14,7 @@ class Player:
         self.gender = gender
         self.sc = 5
         self.c_c = 5
+        self.meet_num = 1
 
     def __repr__(self):
         return f"Day: {self.day}, Name: {self.name}, Gender: {self.gender}, Depression counter: {self.sc}, Climate Change Counter: {self.c_c}"
@@ -143,6 +145,9 @@ def ran_fact():
         print(
             "Climate change can have serious health impacts such as heat stress, extreme cold, which can cause major deaths due to heart diseases."
         )
+    else:
+        ran_fact()
+    meeting_decide()
 
 
 def d_c():
@@ -162,6 +167,7 @@ def d_c_b():
         print("No change in you depression")
 
 def home():
+    player1.meet_num += 1
     print(
         "You go home in a hurry with you head low, hoping no one pays attention to you.\nAt you home you are greeted by your parents and then you go to your bed for a quick nap before dinner."
     )
@@ -171,37 +177,34 @@ def home():
         print("You decide to stay, who will notice your absence?")
         player1.sc += 1
         print("Player depression: + 1")
+        ran_fact()
+        meeting_decide()
     elif fd == "no":
         print("You suddenly feel the need to go to the meeting and you bolt up.\nYou are ready in minutes,\nYour parents are suprised when they see you downstiars.\nYou quickly say where you going and you dad says he will drive you to your school.\nSoon you are at the front of the school.\nBefore you leave, you father tells you\nSon, I am proud of you and what you doing, never forget, love you.\nYou are stunned for a second and then reply\nLove you too.\nThen you go rushing into the building.")
         player1.sc -= 2
         print("Player depression: - 2")
         print("You get there in the middle of the teacher's lecture.\nYou sit down at the nearest table and listen to the teacher.\nTeacher: ….it past the north forest. It is slowly spreading to our neighborhood.\nPlease be careful and stay away from the north forest as it is very much surrounded by carbon dioxide and is dangerous.\n\nAfter hearing this progress report, you worry more about the future of this neighborhood.\nYou head to your assigned workstation with another kid who you don't pay much attention to. \nYou begin brainstorming about what you can do to help.\n30 minutes later\nThe group came back together to discuss and a list of ideas were made.\nEach day each person chooses what he or she wants to do and con only do it once.\nThis will start the next meeting.\nTeacher: Thanks everyone for coming and I hope you to see you guys next time.\nYou silenly get up and go home, wondering what will you do next...")
-    #NEXT STAGE 
-
-
-def GT_meeting1():
-    print(
-        "You’ve made it to the green team.\nWow, you made it just in the nick of time.\nTeacher: Welcome back students. I hope you all had a lovely weekend.\nHere’s a progress report on the expanding wildfire.\nThe fire has made it past the north forest.\nIt is slowly spreading to our town.\nPlease be careful and stay away from the north forest as it is very much surrounded by smoke and is dangerous.\n\nAfter hearing this progress report, you worry more about the future of this neighborhood.\nYou head to your assigned workstation with another kid who you don't pay much attention to. \nYou begin brainstorming about what you can do to help.\n30 minutes later\nThe group came back together to discuss and a list of ideas were made.\nEach day each person chooses what he or she wants to do and con only do it once.\nThis will start the next meeting.\nTeacher: Thanks everyone for coming and I hope you to see you guys next time.\nYou silenly get up and go home, wondering what will you do next..."
-    )
-
-#next scene
+        ran_fact()
+        meeting_decide()
 
 
 
 def clean_s():
-    print("You decided to help pick up cigarettes off the street.\nYou weren’t on this alone.\nLuckly, half of the green team committee gather to help clean the streets and you were able to work with them.")
-  #to be continued
+    print("You decided to help pick up cigarettes off the street.\nYou weren’t on this alone.\nLuckly, half of the green team committee gather to help clean the streets and you were able to work with them.\n That really helped with the cleanup.\nGood job on completing this!")
+    player1.c_c -= 1
+    d_c()
+    ran_fact()
+    meeting_decide()
 
 
 
 def rrr():
     print("You know that the main way to help the earth is by with the 3 r’s (reuse, reduce, recycle).\nAlthough the 3 r’s may not be the main way to reduce wildfires, it can help prevent other natural disasters from happening.\nGood job!")
-    player1.c_c += 1
+    player1.c_c -= 1
     d_c()
-  #next scene
-
-
-    
+    ran_fact()
+    meeting_decide()
+  
 
 
 
@@ -211,6 +214,8 @@ def do_none():
     print("Player depression: + 1")
     player1.c_c += 1
     print("Climate Change : + 1")
+    ran_fact()
+    meeting_decide()
 
 def protest():
     print("You choose to protest in the streets hoping to draw attention to your cause.\nSome of the other green team members were willing to join you and after a little bit of prepping your team make their way to the city hall in hopes that people will notice you and your cause.\nYou see a lot of people looking at you as they pass.\nYou hope they are reading your poster and not judging you…\n2 hours later...\nYour team heads back to the school where you put away your stuff.\nYou know for a fact that now more people are aware of the problems the wild fire is causing and hope they will take action.\nGood Job!")
@@ -218,6 +223,8 @@ def protest():
     print("Player depression: - 1")
     player1.c_c -= 1
     print("Climate change: - 1")
+    ran_fact()
+    meeting_decide()
 
 def advertise():
     print("You remember a friend of yours named Karl was a pretty famous youtuber and decided to ask him for help.\nYou called him and told him that you wanted to spread the word on the wild fires, and he agreed to help.\nA few minutes later…\nYour friend is here and he helped you record a message on the wildfires and how the community can help out.\nKarl:We look good, I’ll upload it later and see what happens, see you?\nHe leaves and you go home happy that you took a big step on solving the wildfires.\nGood job!")
@@ -225,6 +232,8 @@ def advertise():
     print("Player depression - 1")
     player1.c_c -= 1
     print("Climate change - 1")
+    ran_fact()
+    meeting_decide()
 
 def make_p():
     print("You realize that making posters would be the most effective way to make a statement about climate change.\nWhile making these posters, you notice that you’re able to take your mind off of the distractions and problems that you’ve faced.\nAlthough you haven’t been feeling your best, you decide to continue on and ignore the feelings of sadness and disinterest.\nYou haven’t felt so useful in a long time.")
@@ -232,43 +241,51 @@ def make_p():
     print("Player depression - 1")
     player1.c_c -= 1
     print("Climate change - 1")
+    ran_fact()
+    meeting_decide()
   
+def shock():
+    print("You feel like upset about the news of Ms. Hert.\nYou have a hard time thinking about anything but Ms. Hert.\nYou don’t know how to feel about this…\nYou let your partner do all the work and you're just sitting there staring off into the distance.\n1 hour later…\nAs soon as the sub dismisses you from class, you run home immediately crying and not knowing why.\nThe only thing you can think of is Ms. Hert.\nYou ask yourself, “Am I really crying over her?")
+    player1.sc -= 1
+    print("Player depression - 1")
+    player1.c_c -= 1
+    print("Climate change - 1")
+    ran_fact()
+
+
 
 def GT_meeting():
     print("It's another Green Team meeting.\nTime to choose an activity")
     print(things_do)
     numb = input("Choose what you want to do.").lower()
-    if numb in things_do:
-        GT_meeting.remove("numb")
-        if numb == "help pick up cigarettes off the streets":
-            print("you chose to help pick up cigarettes off the streets")
-        elif numb == "reuse, reduce, recycle":
-            print("you chose to reuse, reduce, recycle")
-            rrr()
-        elif numb == "do nothing":
-            print("do nothing")
-            do_none()
-        elif numb == "protest":
-            print("protest")
-            protest()
-        elif numb == "advertise greener ways":
-            print("advertise greener ways")
-            advertise()
-        elif numb == "make poster":
-            print("make poster")
-            make_p()
+    if (numb == "help pick up cigarettes off the streets") and (numb in things_do):
+        print("you chose to help pick up cigarettes off the streets")
+        things_do.remove("Help pick up cigarettes off the streets")
+    elif (numb == "reuse, reduce, recycle") and (numb in things_do):
+        print("you chose to reuse, reduce, recycle")
+        things_do.remove("reuse, reduce, recycle")
+        rrr()
+    elif (numb == "do nothing") and (numb in things_do):
+        print("do nothing")
+        do_none()
+    elif (numb == "protest") and (numb in things_do):
+        print("protest")
+        things_do.remove("protest")
+        protest()
+    elif (numb == "advertise greener ways") and (numb in things_do):
+        print("advertise greener ways")
+        things_do.remove("advertise greener ways")
+        advertise()
+    elif( numb == "make poster") and (numb in things_do):
+        print("make poster")
+        things_do.remove("make poster")
+        make_p()
     else:
-      GT_meeting()
-        
-        
-        
-        
+        GT_meeting()
         
     
-    
-
-
 def nap():
+    player1.meet_num += 1
     print("You take a nap in the janitor closet")
     player1.sc += 1
     print("Player depression: + 1")
@@ -276,12 +293,16 @@ def nap():
     ik = input("You decide to stay in your comfort zone not feeling like going to the meeting.\nThe realities of depression truly catching up to you huh?\nYou take what was supposed to be a short nap…\n(new line)\n4 hours later…\nyou wake up the sound of someone unlocking the door.\nYou quickly gather your stuff and check the time on your phone.\n7:24 it says.\nWow, it must have been an amazing sleep.\nYou hear the knob being turned and you start to panic.\nLuckily you find a box of garbage bags to use so you can cover yourself with it.\nCREaAKkkkk…\nYou hold as still as possible not knowing who just entered.\nYou think to yourself…\nShould you stay still or run?").lower()
     if ik == "stay still":
         print("Worrying about what could happen if you ran, you stayed put.\nYou feel your heart racing and your breathing becoming heavier.\nYou wonder who would be in school at such late hours.\nThe janitor?\nYou ask yourself.\nYou slowly move your head to the small gap between the floor and the bag.\nWhoever it is enters grabs some things and leaves.\nAfter a few minutes you get up and hurry out, not wanting to get caught\nIt would have been better just to run huh?")
-      #next scene
+        ran_fact()
+        meeting_decide()
     elif ik == "run":
         print("You made a bold move and decided to run.\nAlthough you don’t know who it is, you worry about what could happen if you did stay.\nYou grip tightly to your backpack and make a run for it.\nYou jump up from under the bag scaring the person but you don’t care.\nYou don’t look back and continue to run until you feel tired.\nYou look around to see where you are and it turns out you ran all the way home.\nGood for you!\nThe rest of the week speeds on…")
-#next scene
+        ran_fact()
+        meeting_decide()
     else:
         print("You had a hard time deciding and you knocked down a broom that was next to you.\nIn fear that you were discovered, you bolted out of the room, scaring the person but you don’t care.\nYou don’t look back and continue to run until you feel tired.\nYou look around to see where you are and it turns out you ran all the way home.\nGood for you!\nThe rest of the week speeds on…")
+        ran_fact()
+        meeting_decide()
   
   
 
@@ -308,10 +329,7 @@ def beginning():
         ).lower()
         if check2 == "yes":
             d_c()
-            if meet_num == 1:
-                GT_meeting1()
-            else:
-                GT_meeting()
+            meeting_decide()
         else:
             beginning()
     elif (action_o == "3") or (action_o == "three"):
@@ -321,20 +339,64 @@ def beginning():
         if check1 == "yes":
             nap()
         else:
-                GT_meeting()
+                beginning()
         
     else:
         print("Not an option")
         beginning()
 
+def GT_meeting4():
+    bla = input("Another week, another meeting.\nYou recently have watched the news and learned that the fires has officially touched grounds in the neighborhood and leaves destruction where ever it is found.\nYou feel somewhat defeated that you weren’t able to do more to hold back the fire.\nYou are unsure if you should go to the meeting today.\n Should you go?").lower()
+    if bla == "yes":
+        print("")
 
-print(
-    "\nWelcome player. \nIn this game, you’ll be playing a character who’s going through an enormous amount of challenges. \nYou will be playing as a high school student who is suffering from long-term depression.\nYou have to figure out how to save your neighborhood from the damaging wild fires of climate change while also combating the characters disorder.\nThis character has joined the green team in hopes of being able to make their neighborhood more sustainable and protecting it from current and future problems.”"
-)
+def GT_meeting3():
+    player1.meet_num += 1
+    print("Wow.\nIt’s already the end of the day.\nTime surely goes by fast.\nToday you felt happier and more confident than usual.\nYou feel at your best and decide to head to the green team meeting.\nYou head into the classroom and see that your teacher isn’t here.\nYou wonder where she is.\nSub: “Ms. Hert is not in today and will not be from now on.\nI’m Mr. Walke.\nI will be subbing for her.\nMs. Hert has left the school and resigned from her job.\nAccording to the principal, Ms. Hert felt like this wasn’t a safe environment and has moved to somewhere far from here.\nYou feel sick on the inside, knowing that one of the best teachers here has moved away suddenly.\nNot even a good-bye?\nWow...\nHow could she just leave us when we need her the most?\nSub: “But, she did leave a lesson plan.\nYou are supposed to be working on ways to help combat the current wildfires.\nSo, you will just continue on that or start a new project about that.")
+    thi = input("Stay in shock. Yes or no?").lower()
+    if thi == "yes":
+        shock()
+    else:
+        GT_meeting()
 
-print(
-    "\nHow to play:\nIn order to win you must keep the climate change bar and social issues bar as low as possible. \nYour decisions will determine what happens in this game. \nPositive influences will decrease the bar while negative influences will increase the bar. \nIf one bar reaches the end, you lose. \nWill you be able to save your town or will you let it crumble?"
-)
+def GT_meeting2():
+    decision1 = input("You’ve just gotten out of class and you head for the Green Team meeting.\nOne part of you wants to go to the meeting and the other says not to. You ask yourself whether or not you truly want to go to the meeting.\nConfused and unsure…\nDo you want to go to the meeting?").lower()
+    if decision1 == "yes":
+        player1.sc += 1
+        print("You decided to side with the side that says you should go to the meeting.\nYou walk into the classroom ready to learn.\nYou silently slip into your seat and wave to your partner.\nYou turn back to the board and carefully listen to the teacher.\nTeacher: “Students, as you may know, the dixon fire has grown and spread.\nAlthough it has not touched our neighborhood, it is closed by.\nI was to ensure you, firefighters are doing all they can to protect us and our land.\nBut they cannot combat their disaster on their own.\nWe must do our part to help.\nAs a member of the green team, we are obligated to help.\nDo your part to help this disaster.")
+        player1.meet_num += 1
+        GT_meeting()
+    elif decision1 == "no":
+        player1.sc += 1
+        print("Although one side of you wanted you to go to the meeting, you decided not to go and just head home.\nWhen you get home, you question yourself again, asking ‘why didn’t I go to the meeting?’ You feel hopeless and like you're unable to do your part to help\nYou don’t feel as interested in being on the green team as you once did.\nFeeling an overwhelming amount of shame, you silently let it out…")
+        d_c_b()
+        player1.meet_num += 1
+        ran_fact
+        
+
+def GT_meeting1():
+    print("You’ve made it to the green team.\nWow, you made it just in the nick of time.\nTeacher: Welcome back students. I hope you all had a lovely weekend.\nHere’s a progress report on the expanding wildfire.\nThe fire has made it past the north forest.\nIt is slowly spreading to our town.\nPlease be careful and stay away from the north forest as it is very much surrounded by smoke and is dangerous.\n\nAfter hearing this progress report, you worry more about the future of this neighborhood.\nYou head to your assigned workstation with another kid who you don't pay much attention to. \nYou begin brainstorming about what you can do to help.\n30 minutes later\nThe group came back together to discuss and a list of ideas were made.\nEach day each person chooses what he or she wants to do and can only do it once.\nThis will start the next meeting.\nTeacher: Thanks everyone for coming and I hope you to see you guys next time.\nYou silenly get up and go home, wondering what will you do next...")
+    player1.meet_num += 1
+    meeting_decide()
+
+def meeting_decide():
+    if player1.meet_num == 1:
+        GT_meeting1()
+    elif player1.meet_num == 2:
+        GT_meeting2()
+    elif player1.meet_num == 3:
+        GT_meeting3()
+    elif player1.meet_num == 4:
+        GT_meeting4()
+
+
+
+
+
+
+print("\nWelcome player. \nIn this game, you’ll be playing a character who’s going through an enormous amount of challenges. \nYou will be playing as a high school student who is suffering from long-term depression.\nYou have to figure out how to save your neighborhood from the damaging wild fires of climate change while also combating the characters disorder.\nThis character has joined the green team in hopes of being able to make their neighborhood more sustainable and protecting it from current and future problems.")
+
+print("\nHow to play:\nIn order to win you must keep the climate change bar and social issues bar as low as possible. \nYour decisions will determine what happens in this game. \nPositive influences will decrease the bar while negative influences will increase the bar. \nIf one bar reaches the end, you lose. \nWill you be able to save your town or will you let it crumble?")
 intro()
 
 while player1.sc >= 10:
