@@ -3,7 +3,7 @@ import random
 import sys 
 
 
-
+active = True
 things_do = ["help pick up cigarettes off the streets", "reuse, reduce, recycle","do nothing", "protest", "advertise greener ways", "make poster"]
 
 
@@ -47,6 +47,7 @@ def intro():
 
 def ran_fact():
     num = (random.randrange(1, 21))
+    print("Fun Fact:")
     if num == 1:
         print(
             "According to the IPCC‘s(Intergovernmental Panel on Climate Change) sixth assessment report on the state of our climate, the past decade(2012-2022) is likely to have been the hottest period in the last 125,000 years."
@@ -251,6 +252,7 @@ def shock():
     player1.c_c -= 1
     print("Climate change - 1")
     ran_fact()
+    meeting_decide()
 
 
 
@@ -345,10 +347,50 @@ def beginning():
         print("Not an option")
         beginning()
 
+
+def ending():
+    print("There are no more meetings")
+    if (player1.sc >= 6) and (player1.c_c >= 6):
+        print("After getting home, your parents quickly prepare to leave.\nIn less than an hour your family is making their way to your Aunt Sandy's house.\nYou wonder what will happen next...\n1 day later.\nYour family is preparing to return home.\nSome houses were damaged but they can be reconstructed.\nThe governer is planning to make an official town green team to help minimize climate change efects and prevent events like this from happening.\nYou are ready for a new start and you feel better than ever, knowing that your efforts weren't in vain.\nThe End\nPS\nGood Job")
+        # ran_fact()
+        sys.exit()
+    elif (player1.sc <= 6) and (player1.c_c <= 6):
+        print("After getting home, your parents quickly prepare to leave.\nIn less than an hour your family is making their way to your Aunt Sandy's house.\nYou wonder what will happen next...\n1 day later.\nYour family is seeking a new home.\nThe town was burned to what seems that can take a long time to repair.\nAll houses were damaged but they can be reconstructed eventually.\n You become more depressed than ever and you overhear your parents talking about getting a therapist.\nYou wonder if your efforts were in vain as your world starts to crumble into ashes.\nThe End\nPs\nBetter luck next time")
+        # ran_fact()
+        sys.exit()
+    elif (player1.sc <= 6) and (player1.c_c >= 6):
+        print("After getting home, your parents quickly prepare to leave.\nIn less than an hour your family is making their way to your Aunt Sandy's house.\nYou wonder what will happen next...\n1 day later.\nYour family is seeking a new home.\nThe town was burned to what seems that can take a long time to repair.\nYou are not depressed because you know you gave your 110% on trying to save your town and you are ready for a new beginig.\nThe End\nPs\nBetter luck next time")
+        # ran_fact()
+        sys.exit()
+    elif (player1.sc >= 6) and (player1.c_c <= 6):
+        print("After getting home, your parents quickly prepare to leave.\nIn less than an hour your family is making their way to your Aunt Sandy's house.\nYou wonder what will happen next...\n1 day later.\nYour family is preparing to return home.\nSome houses were damaged but they can be reconstructed.\nYou are a little depressed because you know you gave your 110 percent on trying to save your town and you didn't quite, but you are ready for a new begining\nThe end\nGood Job")
+
+
+def GT_meeting5():
+    blabla = input("It's broadcasted everywhere...\nHalf the town is burning up.\nEveryone from that part of town is now moving here.\nEven though there is so much going on right now, the green team meeting is still ongoing.\nThis may be the last green team meeting.\nThere's no debating about this one.\nYou head back into school and make your way into the classroom.\nWell, at least the sub is still here.\nUsually, whenever you came in, she would greet you, but not today...\nYou walked towards your seat and sat down.\nSub: Hey guys.. Um, so today is just a chill day.\nDo whatever you like but just be careful. I don't feel like teaching any lessons today so it's not going to be much of a lesson.\nI know that some of you would like to head home so go ahead.\nOr  if you  really want to help, the fire department is accepting volunteers, just ask your parents first.\nWould you like to head home or help?").lower()
+    if blabla == "home" or "go home":
+        print("Luckily the teacher dismissed you early this meeting so you decided to head home.\nWhat was the point of staying there if you weren't going to learn anything?\nYou walk back home and you feel the scorching heat from the fire.")
+        ran_fact()
+        ending()
+    elif blabla == "help":
+        print("You decided to help the fire department instead of going home.\nYou didn't want to waste this day by staying at home.\nYou ran out of the school and towards the fire department, ready to help in any way you could.\nYou entered the fire house and saw that there were a couple of firefighters getting ready to suit up.\nYou went up to one of them and asked them \n“Is there any way I can help you?”.\nThe fireman looked at you and chuckled,\nYeah kiddo, you should get out of here.\nIt's dangerous and we're about to help extinguish the fire.\nYou looked at him disappointed but he had a point.\nWhat was the purpose of staying here if they were going out to the front lines to help save this town?\nYou walked away sad but knowing that you at least tried...")
+        ran_fact()
+        ending()
+
 def GT_meeting4():
+    player1.meet_num += 1
     bla = input("Another week, another meeting.\nYou recently have watched the news and learned that the fires has officially touched grounds in the neighborhood and leaves destruction where ever it is found.\nYou feel somewhat defeated that you weren’t able to do more to hold back the fire.\nYou are unsure if you should go to the meeting today.\n Should you go?").lower()
     if bla == "yes":
-        print("")
+        print("You head into the room hoping something fun or interesting would happen.\nYou look at your table and find that your partner and the pair in front of you aren’t here.\nSub: As you can, some of the students that were once in our class are not here.\nThey and their families have decided to evacuate due to the increase of wild fires appearing so they will not be here for the rest of the meetings.\nWe don’t know if they will come back or not but we hope they do soon.\nAnyways, our meetings must continue on\nIf you guys at any time feel unsafe or anything and would like to leave, feel free to.\nToday will be no different than previous meetings.\nYou will continue on with your projects based on whatever project you decided to do, we will continue on from there.\nWhat project would you like to do?")
+        GT_meeting()
+    elif bla == "no":
+        print("You thought about whether or not you should go to the meeting and have made a decision on not going.\nWhy bother?\nThis town's gonna burn up no matter what we do.\nYou skip the meeting and head over to the cafe.\nIt’s too early to go home, you say to yourself.\nIn the cafe…\nWhile in the cafe, you think about your previous choices that you’ve made.\nSome you deeply regretted and some you're proud of.\nYou feel frustrated that you weren’t able to do enough to help protect this neighborhood.\nBut you also know that this isn’t a one person job...\nStill, you are angry that you couldn’t do more to help.")
+        player1.sc += 1
+        print()
+        player1.c_c += 2
+        ran_fact()
+        meeting_decide()
+
 
 def GT_meeting3():
     player1.meet_num += 1
@@ -368,6 +410,7 @@ def GT_meeting2():
         GT_meeting()
     elif decision1 == "no":
         player1.sc += 1
+        print("Depression counter + 1")
         print("Although one side of you wanted you to go to the meeting, you decided not to go and just head home.\nWhen you get home, you question yourself again, asking ‘why didn’t I go to the meeting?’ You feel hopeless and like you're unable to do your part to help\nYou don’t feel as interested in being on the green team as you once did.\nFeeling an overwhelming amount of shame, you silently let it out…")
         d_c_b()
         player1.meet_num += 1
@@ -375,7 +418,7 @@ def GT_meeting2():
         
 
 def GT_meeting1():
-    print("You’ve made it to the green team.\nWow, you made it just in the nick of time.\nTeacher: Welcome back students. I hope you all had a lovely weekend.\nHere’s a progress report on the expanding wildfire.\nThe fire has made it past the north forest.\nIt is slowly spreading to our town.\nPlease be careful and stay away from the north forest as it is very much surrounded by smoke and is dangerous.\n\nAfter hearing this progress report, you worry more about the future of this neighborhood.\nYou head to your assigned workstation with another kid who you don't pay much attention to. \nYou begin brainstorming about what you can do to help.\n30 minutes later\nThe group came back together to discuss and a list of ideas were made.\nEach day each person chooses what he or she wants to do and can only do it once.\nThis will start the next meeting.\nTeacher: Thanks everyone for coming and I hope you to see you guys next time.\nYou silenly get up and go home, wondering what will you do next...")
+    print("You havve made it to the green team.\nWow, you made it just in the nick of time.\nTeacher: Welcome back students. I hope you all had a lovely weekend.\nHere’s a progress report on the expanding wildfire.\nThe fire has made it past the north forest.\nIt is slowly spreading to our town.\nPlease be careful and stay away from the north forest as it is very much surrounded by smoke and is dangerous.\n\nAfter hearing this progress report, you worry more about the future of this neighborhood.\nYou head to your assigned workstation with another kid who you don't pay much attention to. \nYou begin brainstorming about what you can do to help.\n30 minutes later\nThe group came back together to discuss and a list of ideas were made.\nEach day each person chooses what he or she wants to do and can only do it once.\nThis will start the next meeting.\nTeacher: Thanks everyone for coming and I hope you to see you guys next time.\nYou silenly get up and go home, wondering what will you do next...")
     player1.meet_num += 1
     meeting_decide()
 
@@ -388,6 +431,10 @@ def meeting_decide():
         GT_meeting3()
     elif player1.meet_num == 4:
         GT_meeting4()
+    elif player1.meet_num == 5:
+        GT_meeting5()
+    else:
+        ending()
 
 
 
@@ -399,23 +446,24 @@ print("\nWelcome player. \nIn this game, you’ll be playing a character who’s
 print("\nHow to play:\nIn order to win you must keep the climate change bar and social issues bar as low as possible. \nYour decisions will determine what happens in this game. \nPositive influences will decrease the bar while negative influences will increase the bar. \nIf one bar reaches the end, you lose. \nWill you be able to save your town or will you let it crumble?")
 intro()
 
-while player1.sc >= 10:
-    print(
-        "You got so depressed that you were put in a hospital. Better luck next time"
-    )
-    sys.exit()
-while player1.c_c >= 10:
-    print(
-        "Your neighborhood became so affected by climate change that you had to leave in a rush due to a big wildfire that started in it. Your family were able to escape and now you are on your aunt's house. Better luck next time"
-    )
-    sys.exit()
-while player1.sc <= 0:
-    print(
-        "You were able to get out of your depression and now you are decided to put all of you efforts on helping your communitie. Great job"
-    )
-    sys.exit()
-while player1.c_c <= 0:
-    print(
-        "You saved neighborhood from the affects of climate change and know you can start working on yourself and reconstructing your life. Great job."
-    )
-    sys.exit()
+while active:
+    if player1.sc >= 10:
+        print(
+            "You got so depressed that you were put in a hospital. Better luck next time"
+        )
+        sys.exit()
+    elif player1.c_c >= 10:
+        print(
+            "Your neighborhood became so affected by climate change that you had to leave in a rush due to a big wildfire that started in it. Your family were able to escape and now you are on your aunt's house. Better luck next time"
+        )
+        sys.exit()
+    elif player1.sc <= 0:
+        print(
+            "You were able to get out of your depression and now you are decided to put all of you efforts on helping your communitie. Great job"
+        )
+        sys.exit()
+    elif player1.c_c <= 0:
+        print(
+            "You saved neighborhood from the affects of climate change and know you can start working on yourself and reconstructing your life. Great job."
+        )
+        sys.exit()
