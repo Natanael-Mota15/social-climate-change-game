@@ -1,6 +1,7 @@
 from email.contentmanager import raw_data_manager
 import random
-import sys 
+import sys
+from urllib import response 
 
 
 active = True
@@ -109,7 +110,7 @@ def ran_fact():
 
     elif num == 14:
         print(
-            "Dengue is the world’s fastest-growing mosquito-borne virus, currently killing some 10,000 people and affecting around 100 million per year. As global temperatures are rising, Aedes aegypti mosquitos that carry the disease could thrive in places that were previously unsuitable for them and benefit from shorter incubation periods. Which means that Dengue would spread faster."
+            "Dengue is the world's fastest-growing mosquito-borne virus, currently killing some 10,000 people and affecting around 100 million per year. As global temperatures are rising, Aedes aegypti mosquitos that carry the disease could thrive in places that were previously unsuitable for them and benefit from shorter incubation periods. Which means that Dengue would spread faster."
         )
 
     elif num == 15:
@@ -119,7 +120,7 @@ def ran_fact():
 
     elif num == 16:
         print(
-            "The United States constitutes 5% of the world population and contributes to 22% of the world’s carbon emission."
+            "The United States constitutes 5% of the world population and contributes to 22% of the world's carbon emission."
         )
 
     elif num == 17:
@@ -180,7 +181,7 @@ def home():
         print("Player depression: + 1")
         ran_fact()
         meeting_decide()
-    elif fd == "no":
+    else:
         print("You suddenly feel the need to go to the meeting and you bolt up.\nYou are ready in minutes,\nYour parents are suprised when they see you downstiars.\nYou quickly say where you going and you dad says he will drive you to your school.\nSoon you are at the front of the school.\nBefore you leave, you father tells you\nSon, I am proud of you and what you doing, never forget, love you.\nYou are stunned for a second and then reply\nLove you too.\nThen you go rushing into the building.")
         player1.sc -= 2
         print("Player depression: - 2")
@@ -191,7 +192,7 @@ def home():
 
 
 def clean_s():
-    print("You decided to help pick up cigarettes off the street.\nYou weren’t on this alone.\nLuckly, half of the green team committee gather to help clean the streets and you were able to work with them.\n That really helped with the cleanup.\nGood job on completing this!")
+    print("You decided to help pick up cigarettes off the street.\nYou weren't on this alone.\nLuckly, half of the green team committee gather to help clean the streets and you were able to work with them.\n That really helped with the cleanup.\nGood job on completing this!")
     player1.c_c -= 1
     d_c()
     ran_fact()
@@ -302,7 +303,7 @@ def nap():
         ran_fact()
         meeting_decide()
     else:
-        print("You had a hard time deciding and you knocked down a broom that was next to you.\nIn fear that you were discovered, you bolted out of the room, scaring the person but you don’t care.\nYou don’t look back and continue to run until you feel tired.\nYou look around to see where you are and it turns out you ran all the way home.\nGood for you!\nThe rest of the week speeds on…")
+        print("You had a hard time deciding and you knocked down a broom that was next to you.\nIn fear that you were discovered, you bolted out of the room, scaring the person but you don't care.\nYou don't look back and continue to run until you feel tired.\nYou look around to see where you are and it turns out you ran all the way home.\nGood for you!\nThe rest of the week speeds on…")
         ran_fact()
         meeting_decide()
   
@@ -311,7 +312,7 @@ def nap():
 
 def beginning():
     print(
-        "Okay player. You’re currently in the janitor closet, which have become your hiding place. It’s currently the afternoon, school just ended and it’s the green team meeting is going to happen soon. What should you do?"
+        "Okay player. You're currently in the janitor closet, which have become your hiding place. It's currently the afternoon, school just ended and it's the green team meeting is going to happen soon. What should you do?"
     )
     action_o = input(
         "\n1:Go home\n2:Go to the Green Tean Meeting\n3:Go to sleep in the closet.\n(Put number)"
@@ -352,30 +353,33 @@ def ending():
     print("There are no more meetings")
     if (player1.sc >= 6) and (player1.c_c >= 6):
         print("After getting home, your parents quickly prepare to leave.\nIn less than an hour your family is making their way to your Aunt Sandy's house.\nYou wonder what will happen next...\n1 day later.\nYour family is preparing to return home.\nSome houses were damaged but they can be reconstructed.\nThe governer is planning to make an official town green team to help minimize climate change efects and prevent events like this from happening.\nYou are ready for a new start and you feel better than ever, knowing that your efforts weren't in vain.\nThe End\nPS\nGood Job")
-        # ran_fact()
+        
         sys.exit()
     elif (player1.sc <= 6) and (player1.c_c <= 6):
         print("After getting home, your parents quickly prepare to leave.\nIn less than an hour your family is making their way to your Aunt Sandy's house.\nYou wonder what will happen next...\n1 day later.\nYour family is seeking a new home.\nThe town was burned to what seems that can take a long time to repair.\nAll houses were damaged but they can be reconstructed eventually.\n You become more depressed than ever and you overhear your parents talking about getting a therapist.\nYou wonder if your efforts were in vain as your world starts to crumble into ashes.\nThe End\nPs\nBetter luck next time")
-        # ran_fact()
+        
         sys.exit()
     elif (player1.sc <= 6) and (player1.c_c >= 6):
         print("After getting home, your parents quickly prepare to leave.\nIn less than an hour your family is making their way to your Aunt Sandy's house.\nYou wonder what will happen next...\n1 day later.\nYour family is seeking a new home.\nThe town was burned to what seems that can take a long time to repair.\nYou are not depressed because you know you gave your 110% on trying to save your town and you are ready for a new beginig.\nThe End\nPs\nBetter luck next time")
-        # ran_fact()
+        
         sys.exit()
     elif (player1.sc >= 6) and (player1.c_c <= 6):
         print("After getting home, your parents quickly prepare to leave.\nIn less than an hour your family is making their way to your Aunt Sandy's house.\nYou wonder what will happen next...\n1 day later.\nYour family is preparing to return home.\nSome houses were damaged but they can be reconstructed.\nYou are a little depressed because you know you gave your 110 percent on trying to save your town and you didn't quite, but you are ready for a new begining\nThe end\nGood Job")
 
 
 def GT_meeting5():
-    blabla = input("It's broadcasted everywhere...\nHalf the town is burning up.\nEveryone from that part of town is now moving here.\nEven though there is so much going on right now, the green team meeting is still ongoing.\nThis may be the last green team meeting.\nThere's no debating about this one.\nYou head back into school and make your way into the classroom.\nWell, at least the sub is still here.\nUsually, whenever you came in, she would greet you, but not today...\nYou walked towards your seat and sat down.\nSub: Hey guys.. Um, so today is just a chill day.\nDo whatever you like but just be careful. I don't feel like teaching any lessons today so it's not going to be much of a lesson.\nI know that some of you would like to head home so go ahead.\nOr  if you  really want to help, the fire department is accepting volunteers, just ask your parents first.\nWould you like to head home or help?").lower()
-    if blabla == "home" or "go home":
+    player1.meet_num += 1
+    response5 = input("It's broadcasted everywhere...\nHalf the town is burning up.\nEveryone from that part of town is now moving here.\nEven though there is so much going on right now, the green team meeting is still ongoing.\nThis may be the last green team meeting.\nThere's no debating about this one.\nYou head back into school and make your way into the classroom.\nWell, at least the sub is still here.\nUsually, whenever you came in, she would greet you, but not today...\nYou walked towards your seat and sat down.\nSub: Hey guys.. Um, so today is just a chill day.\nDo whatever you like but just be careful. I don't feel like teaching any lessons today so it's not going to be much of a lesson.\nI know that some of you would like to head home so go ahead.\nOr  if you  really want to help, the fire department is accepting volunteers, just ask your parents first.\nWould you like to head home or help?").lower()
+    if (response5 == "home") or (response5 == "go home"):
         print("Luckily the teacher dismissed you early this meeting so you decided to head home.\nWhat was the point of staying there if you weren't going to learn anything?\nYou walk back home and you feel the scorching heat from the fire.")
         ran_fact()
         ending()
-    elif blabla == "help":
+    elif response5 == "help":
         print("You decided to help the fire department instead of going home.\nYou didn't want to waste this day by staying at home.\nYou ran out of the school and towards the fire department, ready to help in any way you could.\nYou entered the fire house and saw that there were a couple of firefighters getting ready to suit up.\nYou went up to one of them and asked them \n“Is there any way I can help you?”.\nThe fireman looked at you and chuckled,\nYeah kiddo, you should get out of here.\nIt's dangerous and we're about to help extinguish the fire.\nYou looked at him disappointed but he had a point.\nWhat was the purpose of staying here if they were going out to the front lines to help save this town?\nYou walked away sad but knowing that you at least tried...")
         ran_fact()
         ending()
+    else: 
+         GT_meeting5()
 
 def GT_meeting4():
     player1.meet_num += 1
