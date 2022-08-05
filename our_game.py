@@ -313,7 +313,7 @@ def nap():
 
 def beginning():
     print(
-        "Okay player. You're currently in the janitor closet, which have become your hiding place. It's currently the afternoon, school just ended and it's the green team meeting is going to happen soon. What should you do?"
+        "Okay player.\nYou're currently in the janitor closet, which have become your hiding place.\nIt's currently the afternoon, school just ended and it's the green team meeting is going to happen soon.\nWhat should you do?"
     )
     action_o = input(
         "\n1:Go home\n2:Go to the Green Team Meeting\n3:Go to sleep in the closet.\n(Put number)"
