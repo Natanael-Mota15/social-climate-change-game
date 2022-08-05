@@ -48,108 +48,108 @@ def intro():
 
 def ran_fact():
     print(player1)
-    num = (random.randrange(1, 21))
-    print("Fun Fact:")
-    if num == 1:
-        print(
-            "According to the IPCC‘s(Intergovernmental Panel on Climate Change) sixth assessment report on the state of our climate, the past decade(2012-2022) is likely to have been the hottest period in the last 125,000 years."
-        )
+    questi = input("Do you want a fun fact").lower()
+    if questi == "yes":
+        num = (random.randrange(1, 21))
+        print("Fun Fact:")
+        if num == 1:
+            print(
+                "According to the IPCC's(Intergovernmental Panel on Climate Change) sixth assessment report on the state of our climate, the past decade(2012-2022) is likely to have been the hottest period in the last 125,000 years."
+            )
 
-    elif num == 2:
-        print(
-            "A 2019 study found that oceans had sucked up 90% of the heat gained by the planet between 1971 and 2010. Heat we produce."
-        )
+        elif num == 2:
+            print(
+                "A 2019 study found that oceans had sucked up 90% of the heat gained by the planet between 1971 and 2010. Heat we produce."
+            )
 
-    elif num == 3:
-        print("CO2 is at its highest in 2 Million Years")
+        elif num == 3:
+            print("CO2 is at its highest in 2 Million Years")
 
-    elif num == 4:
-        print(
-            "Since the mid-1990s, we’ve lost around 28 trillion tons of ice, with today’s melt rate standing at 1.2 trillion tons a year."
-        )
+        elif num == 4:
+            print(
+                "Since the mid-1990s, we’ve lost around 28 trillion tons of ice, with today’s melt rate standing at 1.2 trillion tons a year."
+            )
 
-    elif num == 5:
-        print("Air pollution kills more than 9 million people per year.")
+        elif num == 5:
+            print("Air pollution kills more than 9 million people per year.")
 
-    elif num == 6:
-        print(
-            "Polluting particles, such as PM10 or PM2.5, which cause adverse health effects similar to those of cigarettes, actually reflect the sun’s heat rather than trap it. These particles have kept the planet at a lower tempeture"
-        )
+        elif num == 6:
+            print(
+                "Polluting particles, such as PM10 or PM2.5, which cause adverse health effects similar to those of cigarettes, actually reflect the sun’s heat rather than trap it. These particles have kept the planet at a lower tempeture"
+            )
 
-    elif num == 7:
-        print(
-            "Sea level rise would probably take a millennia to reverse its course."
-        )
+        elif num == 7:
+            print(
+                "Sea level rise would probably take a millennia to reverse its course."
+            )
 
-    elif num == 8:
-        print(
-            "A report from The Lancet found that the number of work hours lost to heat across the globe increased from 199 billion in 2000 to 295 billion in 2020. That is equivalent to 88 work hours per employed person."
-        )
+        elif num == 8:
+            print(
+                "A report from The Lancet found that the number of work hours lost to heat across the globe increased from 199 billion in 2000 to 295 billion in 2020. That is equivalent to 88 work hours per employed person."
+            )
 
-    elif num == 9:
-        print(
-            "A study by Xu et al. (2020) called “Future of the Human Niche” found that by 2070, under a high emissions scenario, these unbearable temperatures could expand to affect up to 3 billion people"
-        )
+        elif num == 9:
+            print(
+                "A study by Xu et al. (2020) called “Future of the Human Niche” found that by 2070, under a high emissions scenario, these unbearable temperatures could expand to affect up to 3 billion people"
+            )
 
-    elif num == 10:
-        print(
-            "More than 1 million species are at risk of extinction by climate change"
-        )
+        elif num == 10:
+            print(
+                "More than 1 million species are at risk of extinction by climate change"
+            )
 
-    elif num == 11:
-        print(
-            "Countries contributing the most to global emissions have the best chance of curbing climate change, but leaders are doing little to address it."
-        )
+        elif num == 11:
+            print(
+                "Countries contributing the most to global emissions have the best chance of curbing climate change, but leaders are doing little to address it."
+            )
 
-    elif num == 12:
-        print("Extreme heat events have become more frequent and severe")
+        elif num == 12:
+            print("Extreme heat events have become more frequent and severe")
 
-    elif num == 13:
-        print(
-            "Two-thirds of extreme weather events in the last 20 years were influenced by humans."
-        )
+        elif num == 13:
+            print(
+                "Two-thirds of extreme weather events in the last 20 years were influenced by humans."
+            )
 
-    elif num == 14:
-        print(
-            "Dengue is the world's fastest-growing mosquito-borne virus, currently killing some 10,000 people and affecting around 100 million per year. As global temperatures are rising, Aedes aegypti mosquitos that carry the disease could thrive in places that were previously unsuitable for them and benefit from shorter incubation periods. Which means that Dengue would spread faster."
-        )
+        elif num == 14:
+            print(
+                "Dengue is the world's fastest-growing mosquito-borne virus, currently killing some 10,000 people and affecting around 100 million per year. As global temperatures are rising, Aedes aegypti mosquitos that carry the disease could thrive in places that were previously unsuitable for them and benefit from shorter incubation periods. Which means that Dengue would spread faster."
+            )
 
-    elif num == 15:
-        print(
-            "Average wildlife populations have dropped by 60 per cent in just over 40 years(2021)"
-        )
+        elif num == 15:
+            print(
+                "Average wildlife populations have dropped by 60 per cent in just over 40 years(2021)"
+            )
 
-    elif num == 16:
-        print(
-            "The United States constitutes 5% of the world population and contributes to 22% of the world's carbon emission."
-        )
+        elif num == 16:
+            print(
+                "The United States constitutes 5% of the world population and contributes to 22% of the world's carbon emission."
+            )
 
-    elif num == 17:
-        print(
-            "Around 15% of the carbon released in the environment is due to deforestation and change in the use of land."
-        )
+        elif num == 17:
+            print(
+                "Around 15% of the carbon released in the environment is due to deforestation and change in the use of land."
+            )
 
-    elif num == 18:
-        print(
-            "Air conditions and heating elements consume 50% of electricity in America."
-        )
+        elif num == 18:
+            print(
+                "Air conditions and heating elements consume 50% of electricity in America."
+            )
 
-    elif num == 19:
-        print(
-            "Carbon dioxide is not the only contributing gas to climate change. Other gases like methane and nitrous oxide are far more dangerous than carbon dioxide alone."
-        )
+        elif num == 19:
+            print(
+                "Carbon dioxide is not the only contributing gas to climate change. Other gases like methane and nitrous oxide are far more dangerous than carbon dioxide alone."
+            )
 
-    elif num == 20:
-        print(
-            "The UN Intergovernmental Panel on Climate Change (IPCC) is a leading body fighting against climate change. This body is a political organization, however, and not a scientific body."
-        )
+        elif num == 20:
+            print(
+                "The UN Intergovernmental Panel on Climate Change (IPCC) is a leading body fighting against climate change. This body is a political organization, however, and not a scientific body."
+            )
 
-    elif num == 21:
-        print(
-            "Climate change can have serious health impacts such as heat stress, extreme cold, which can cause major deaths due to heart diseases."
-        )
-    else:
-        ran_fact()
+        elif num == 21:
+            print(
+                "Climate change can have serious health impacts such as heat stress, extreme cold, which can cause major deaths due to heart diseases."
+            )
     meeting_decide()
 
 
@@ -431,12 +431,16 @@ def meeting_decide():
     if player1.meet_num == 1:
         GT_meeting1()
     elif player1.meet_num == 2:
+        print("Next week")
         GT_meeting2()
     elif player1.meet_num == 3:
+        print("Next week")
         GT_meeting3()
     elif player1.meet_num == 4:
+        print("Next week")
         GT_meeting4()
     elif player1.meet_num == 5:
+        print("Next week")
         GT_meeting5()
     else:
         ending()
