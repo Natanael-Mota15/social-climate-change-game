@@ -47,6 +47,7 @@ def intro():
 
 
 def ran_fact():
+    print(player1)
     num = (random.randrange(1, 21))
     print("Fun Fact:")
     if num == 1:
@@ -201,7 +202,7 @@ def clean_s():
 
 
 def rrr():
-    print("You know that the main way to help the earth is by with the 3 r’s (reuse, reduce, recycle).\nAlthough the 3 r’s may not be the main way to reduce wildfires, it can help prevent other natural disasters from happening.\nGood job!")
+    print("You know that the main way to help the earth is by with the 3 r's (reuse, reduce, recycle).\nAlthough the 3 r’s may not be the main way to reduce wildfires, it can help prevent other natural disasters from happening.\nGood job!")
     player1.c_c -= 1
     d_c()
     ran_fact()
@@ -221,9 +222,9 @@ def do_none():
 
 def protest():
     print("You choose to protest in the streets hoping to draw attention to your cause.\nSome of the other green team members were willing to join you and after a little bit of prepping your team make their way to the city hall in hopes that people will notice you and your cause.\nYou see a lot of people looking at you as they pass.\nYou hope they are reading your poster and not judging you…\n2 hours later...\nYour team heads back to the school where you put away your stuff.\nYou know for a fact that now more people are aware of the problems the wild fire is causing and hope they will take action.\nGood Job!")
-    player1.sc -= 1
+    player1.sc -= 2
     print("Player depression: - 1")
-    player1.c_c -= 1
+    player1.c_c -= 2
     print("Climate change: - 1")
     ran_fact()
     meeting_decide()
@@ -351,19 +352,19 @@ def beginning():
 
 def ending():
     print("There are no more meetings")
-    if (player1.sc >= 6) and (player1.c_c >= 6):
+    if (player1.sc >= 7) and (player1.c_c >= 7):
         print("After getting home, your parents quickly prepare to leave.\nIn less than an hour your family is making their way to your Aunt Sandy's house.\nYou wonder what will happen next...\n1 day later.\nYour family is preparing to return home.\nSome houses were damaged but they can be reconstructed.\nThe governer is planning to make an official town green team to help minimize climate change efects and prevent events like this from happening.\nYou are ready for a new start and you feel better than ever, knowing that your efforts weren't in vain.\nThe End\nPS\nGood Job")
         
         sys.exit()
-    elif (player1.sc <= 6) and (player1.c_c <= 6):
+    elif (player1.sc <= 7) and (player1.c_c <= 7):
         print("After getting home, your parents quickly prepare to leave.\nIn less than an hour your family is making their way to your Aunt Sandy's house.\nYou wonder what will happen next...\n1 day later.\nYour family is seeking a new home.\nThe town was burned to what seems that can take a long time to repair.\nAll houses were damaged but they can be reconstructed eventually.\n You become more depressed than ever and you overhear your parents talking about getting a therapist.\nYou wonder if your efforts were in vain as your world starts to crumble into ashes.\nThe End\nPs\nBetter luck next time")
         
         sys.exit()
-    elif (player1.sc <= 6) and (player1.c_c >= 6):
+    elif (player1.sc <= 7) and (player1.c_c >= 7):
         print("After getting home, your parents quickly prepare to leave.\nIn less than an hour your family is making their way to your Aunt Sandy's house.\nYou wonder what will happen next...\n1 day later.\nYour family is seeking a new home.\nThe town was burned to what seems that can take a long time to repair.\nYou are not depressed because you know you gave your 110% on trying to save your town and you are ready for a new beginig.\nThe End\nPs\nBetter luck next time")
         
         sys.exit()
-    elif (player1.sc >= 6) and (player1.c_c <= 6):
+    elif (player1.sc >= 7) and (player1.c_c <= 7):
         print("After getting home, your parents quickly prepare to leave.\nIn less than an hour your family is making their way to your Aunt Sandy's house.\nYou wonder what will happen next...\n1 day later.\nYour family is preparing to return home.\nSome houses were damaged but they can be reconstructed.\nYou are a little depressed because you know you gave your 110 percent on trying to save your town and you didn't quite, but you are ready for a new begining\nThe end\nGood Job")
 
 
