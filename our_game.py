@@ -48,7 +48,7 @@ def intro():
 
 def ran_fact():
     print(player1)
-    questi = input("\nWould you like to see a fun fact?\n").lower()
+    questi = input("\nWould you like to see a fun fact?\nYes or no?\n").lower()
     if questi == "yes":
         num = (random.randrange(1, 21))
         print("Fun Fact:")
@@ -451,7 +451,7 @@ def meeting_decide():
 
 print("\nWelcome player. \nIn this game, you’ll be playing a character who’s going through an enormous amount of challenges. \nYou will be playing as a high school student who is suffering from long-term depression.\nYou have to figure out how to save your neighborhood from the damaging wild fires of climate change while also combating the characters disorder.\nThis character has joined the green team in hopes of being able to make their neighborhood more sustainable and protecting it from current and future problems.\n")
 
-print("\nHow to play:\nIn order to win you must keep the climate change bar and social issues bar as low as possible. \nYour decisions will determine what happens in this game. \nPositive influences will decrease the bar while negative influences will increase the bar. \nIf one bar reaches the end, you lose. \nWill you be able to save your town or will you let it crumble?\n")
+print("\nHow to play:\nIn order to win you must keep the climate change bar and social issues bar as low as possible. \nYour decisions will determine what happens in this game. \nPositive influences will decrease the bar while negative influences will increase the bar. \nMoxt decisions will have an options of actions or will be yes or no questions. \nWill you be able to save your town or will you let it crumble?\nNote:if any counter reaches 10 you lose but if any hits 0 you win, so be careful")
 intro()
 
 while active:
