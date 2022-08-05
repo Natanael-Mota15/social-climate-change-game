@@ -314,7 +314,7 @@ def beginning():
         "Okay player. You’re currently in the janitor closet, which have become your hiding place. It’s currently the afternoon, school just ended and it’s the green team meeting is going to happen soon. What should you do?"
     )
     action_o = input(
-        "\n1:Go home\n2:Go to the Green Tean Meeting\n3:Go to sleep in the closet.\n(Put number)"
+        "\n1:Go home\n2:Go to the Green Team Meeting\n3:Go to sleep in the closet.\n(Put number)"
     )
     if (action_o == "1") or (action_o == "one"):
         check1 = input(
@@ -418,7 +418,7 @@ def GT_meeting2():
         
 
 def GT_meeting1():
-    print("You havve made it to the green team.\nWow, you made it just in the nick of time.\nTeacher: Welcome back students. I hope you all had a lovely weekend.\nHere’s a progress report on the expanding wildfire.\nThe fire has made it past the north forest.\nIt is slowly spreading to our town.\nPlease be careful and stay away from the north forest as it is very much surrounded by smoke and is dangerous.\n\nAfter hearing this progress report, you worry more about the future of this neighborhood.\nYou head to your assigned workstation with another kid who you don't pay much attention to. \nYou begin brainstorming about what you can do to help.\n30 minutes later\nThe group came back together to discuss and a list of ideas were made.\nEach day each person chooses what he or she wants to do and can only do it once.\nThis will start the next meeting.\nTeacher: Thanks everyone for coming and I hope you to see you guys next time.\nYou silenly get up and go home, wondering what will you do next...")
+    print("You have made it to the green team.\nYour depression has really gotten to you and you hope that the green team will help relieve someone of that stress.\nWow, you made it just in the nick of time.\nTeacher: 'Welcome back students. I hope you all had a lovely weekend.\nHere’s a progress report on the expanding wildfire.\nThe fire has made it past the north forest.\nIt is slowly spreading to our town.\nPlease be careful and stay away from the north forest as it is very much surrounded by smoke and is dangerous.'\n\nAfter hearing this progress report, you worry more about the future of this neighborhood.\nYou head to your assigned workstation with another kid who you don't pay much attention to. \nYou begin brainstorming about what you can do to help.\n30 minutes later\nThe group came back together to discuss and a list of ideas were made.\nEach day each person chooses what he or she wants to do and can only do it once.\nTeacher: 'Thanks everyone for coming and I hope you to see you guys next time.'\nYou silenly get up and go home, wondering what will you do next...")
     player1.meet_num += 1
     meeting_decide()
 
